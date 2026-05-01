@@ -1,4 +1,4 @@
-# Ziryab Lyrics API Skill
+# ♪ Ziryab Lyrics API Skill
 
 A specialized skill for interacting with the **Ziryab Rhymes & Lyrics API** by Omneity Labs. This skill enables advanced phonetic analysis, rhyme scoring, and songwriting assistance using Sawtone-backed embeddings.
 
@@ -6,11 +6,12 @@ A specialized skill for interacting with the **Ziryab Rhymes & Lyrics API** by O
 
 The Ziryab Lyrics API provides deep phonetic insights into lyrics and poetry. Unlike traditional rhyming dictionaries that rely on exact suffix matching, Ziryab uses machine learning models to score rhymes based on phonetic similarity across a wide array of languages.
 
-## Who Is Ziryab?
+## Who Is the real Ziryab?
 
 Ziryab was a 9th-century musician, poet, and cultural innovator whose influence reached far beyond music.
 
 After moving from Baghdad to Cordoba, he helped shape the artistic culture of al-Andalus, influencing musical style, performance, fashion, etiquette, and courtly taste.
+This project tries to pay a modest tribute for his contributions to our common human heritage.
 
 Learn more: [Wikipedia: Ziryab](https://en.wikipedia.org/wiki/Ziryab)
 
