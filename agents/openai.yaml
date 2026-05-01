@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ziryab Lyrics API"
+  short_description: "Use Ziryab rhyme and lyric APIs"
+  default_prompt: "Use $ziryab-lyrics-api to score rhymes and suggest lyric replacements."
