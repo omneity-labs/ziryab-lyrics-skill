@@ -42,7 +42,101 @@ Ask Codex to rewrite a famous poem or song snippet while maintaining the origina
    python scripts/ziryab_client.py search "fire" --language eng_Latn --top-k 5
    ```
 
+## ✅ Commercial Use
+
+Ziryab does not use copyrighted content and is safe for commercial use.
+
+## 🔌 Install From GitHub
+
+This repository is already the full package. It includes the prompt in `SKILL.md`, the implementation in `scripts/ziryab_client.py`, API notes in `references/api.md`, and Codex metadata in `agents/openai.yaml`.
+
+Do not copy only `SKILL.md`. Clone the entire repository into the location your editor or agent expects.
+
+Repository URL:
+
+```bash
+https://github.com/omneity-labs/ziryab-lyrics-skill
+```
+
+### 1. Codex
+
+Install it as a personal Codex skill by cloning into your Codex skills directory:
+
+```bash
+git clone https://github.com/omneity-labs/ziryab-lyrics-skill ~/.codex/skills/ziryab-lyrics-api
+```
+
+Then set your API token:
+
+```bash
+export ZIRYAB_API_TOKEN='your-token-here'
+```
+
+Start a new Codex session. Codex can then load the skill from `~/.codex/skills/ziryab-lyrics-api` and use the bundled client script instead of needing pasted instructions.
+
+### 2. Claude Code
+
+Claude Code supports personal and project skill directories. For a personal install available in every project:
+
+```bash
+git clone https://github.com/omneity-labs/ziryab-lyrics-skill ~/.claude/skills/ziryab-lyrics-api
+```
+
+For a project-local install, clone it inside the repository you are working on:
+
+```bash
+git clone https://github.com/omneity-labs/ziryab-lyrics-skill .claude/skills/ziryab-lyrics-api
+```
+
+Then set your API token:
+
+```bash
+export ZIRYAB_API_TOKEN='your-token-here'
+```
+
+Open a new Claude Code session. Claude Code will discover the skill from `.claude/skills/...` or `~/.claude/skills/...`, and the bundled `scripts/ziryab_client.py` remains available to execute.
+
+### 3. GitHub Copilot in VS Code or on GitHub
+
+GitHub Copilot does **not** have a global skills folder like Codex or Claude Code. Copilot only reads repository instructions from the repository you have open.
+
+That means the proper install location is inside the project where you want Copilot to use Ziryab. The cleanest setup is to vendor this repository into that project:
+
+```bash
+cd /path/to/your-project
+git submodule add https://github.com/omneity-labs/ziryab-lyrics-skill .ai/ziryab-lyrics-api
+```
+
+Then add a repository instruction file at `.github/copilot-instructions.md` or an `AGENTS.md` file in the project root that tells Copilot to:
+
+- use `.ai/ziryab-lyrics-api/SKILL.md` for Ziryab workflow guidance
+- run `.ai/ziryab-lyrics-api/scripts/ziryab_client.py` for live API calls
+- read `.ai/ziryab-lyrics-api/references/api.md` when request or response details are needed
+
+Once that project is open in VS Code or attached in Copilot Chat, Copilot can use the cloned repo directly from the workspace.
+
+### 4. Cursor and Similar Repo-Scoped Editors
+
+Cursor is also repo-scoped. It uses `.cursor/rules/*.md` or `.mdc` files, or a root `AGENTS.md`, rather than a global skill directory.
+
+Clone this repository into the project where you want Cursor to use it:
+
+```bash
+cd /path/to/your-project
+git submodule add https://github.com/omneity-labs/ziryab-lyrics-skill .ai/ziryab-lyrics-api
+```
+
+Then add either:
+
+- a root `AGENTS.md` that points Cursor to `.ai/ziryab-lyrics-api/SKILL.md` and `.ai/ziryab-lyrics-api/scripts/ziryab_client.py`
+- or a `.cursor/rules/ziryab-lyrics-api.mdc` rule that describes when to use the cloned skill repo
+
+The important part is the same: clone the full repository into the active workspace so the editor can see both the instructions and the Python client.
+
+### 5. MCP or Custom Wrappers
+
+If you want tool-calling outside these editors, wrap `scripts/ziryab_client.py` in an MCP server or another thin adapter. The cloned repository already contains the logic you need; the wrapper only needs to expose it.
 ---
 *Powered by Sawtone & Omneity Labs.*
 
-Visit (Omneity Labs)[https://omneitylabs.com]
+Visit [Omneity Labs](https://omneitylabs.com)
