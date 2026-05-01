@@ -2,7 +2,7 @@
 
 A specialized skill for interacting with the **Ziryab Rhymes & Lyrics API** by Omneity Labs. This skill enables advanced phonetic analysis, rhyme scoring, and songwriting assistance using Sawtone-backed embeddings.
 
-## 🚀 Overview
+## Overview
 
 The Ziryab Lyrics API provides deep phonetic insights into lyrics and poetry. Unlike traditional rhyming dictionaries that rely on exact suffix matching, Ziryab uses machine learning models to score rhymes based on phonetic similarity across a wide array of languages.
 
@@ -14,14 +14,14 @@ After moving from Baghdad to Cordoba, he helped shape the artistic culture of al
 
 Learn more: [Wikipedia: Ziryab](https://en.wikipedia.org/wiki/Ziryab)
 
-## 🛠 Features
+## Features
 
 - **Rhyme Scoring**: Quantify the phonetic similarity between any two words.
 - **Rhyme Search**: Find the best rhyming candidates from curated vocabularies like `common-lyrics`.
 - **Lyric Replacements**: Get context-aware suggestions for words in a line that maintain rhyme and meter.
 - **Full Lyric Analysis**: Analyze stanzas for rhyme schemes, internal rhymes, and average rhyme quality.
 
-## 💡 Fun Ideas for Use
+## Fun Ideas for Use
 
 ### 1. The "Lyric Polisher" Bot
 Feed a rough draft of a song into Codex. Ask it to "Ziryab-analyze" the verses. It can identify where rhymes are weak (low `rhyme_score`) and suggest replacements that fit the mood but sound better together.
@@ -38,7 +38,7 @@ Submit a full stanza to the `lyric-score` endpoint. Use the returned `scheme` an
 ### 5. Automatic Paraphraser that Rhymes
 Ask Codex to rewrite a famous poem or song snippet while maintaining the original rhyme scheme. It can use `suggest-replacements` to find words that preserve the "sound" of the original while changing the meaning.
 
-## ⚙️ Setup
+## Setup
 
 1. **Get an API Key**: Visit [api.sawalni.com/api-keys](https://api.sawalni.com/api-keys).
 2. **Set Environment Variable**:
@@ -50,11 +50,42 @@ Ask Codex to rewrite a famous poem or song snippet while maintaining the origina
    python scripts/ziryab_client.py search "fire" --language eng_Latn --top-k 5
    ```
 
-## ✅ Commercial Use
+## Commercial Use
 
 Ziryab does not use copyrighted content and is safe for commercial use.
 
-## 🔌 Install From GitHub
+## Examples
+
+### Theme Prompt: Pressure to Treasure
+
+Listen: [From Pressure To Treasure on Suno](https://suno.com/s/LN71L19rTFgUqXZR)
+
+![Pressure to Treasure example](./pressure%20to%20treasure.png)
+
+### Easy Listening: Goblins in the Cellar
+
+Listen: [Goblins in the cellar on Suno](https://suno.com/s/L4QKlsT07x45GT9g)
+
+![Goblins in the Cellar example](./goblins%20in%20the%20cellar.jpeg)
+
+### French Track Concept: Le Dernier Bal
+
+Listen: [Le dernier bal on Suno](https://suno.com/s/x5lSMcYTJjVXdpg4)
+
+![Le Dernier Bal example](./le%20dernier%20bal.png)
+
+### French Rap: Cactus dans le Desert
+
+Listen: [Cactus dans le desert on Suno](https://suno.com/s/QgVhx0AJu0XX1J0C)
+
+![Cactus dans le Desert example](./cactus%20dans%20le%20desert.png)
+
+
+### Writing Assistant Output
+
+![Writing help example](./writing%20help.png)
+
+## Install From GitHub
 
 This repository is already the full package. It includes the prompt in `SKILL.md`, the implementation in `scripts/ziryab_client.py`, API notes in `references/api.md`, and Codex metadata in `agents/openai.yaml`.
 
